@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block left_content %}
+    {% include 'ad.html' %}
+    <div class="topnews">
+      <h2>{{ category.name }}</h2>
+      {% include 'ah.html' %}
+    </div>
+    {% include 'pagination.html' %}
+{% endblock %}
