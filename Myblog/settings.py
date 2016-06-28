@@ -56,7 +56,7 @@ INSTALLED_APPS = [
 ]
 
 
-CACHE_MIDDLEWARE_ALIAS = 'default'
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.cache.UpdateCacheMiddleware',
@@ -72,7 +72,9 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.cache.FetchFromCacheMiddleware',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
-CACHE_MIDDLEWARE_SECONDS = 6
+
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 60
 CACHE_MIDDLEWARE_KEY_PREFIX = 'SiteCache'
 
 CACHES = {

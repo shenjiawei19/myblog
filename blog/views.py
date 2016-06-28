@@ -15,6 +15,11 @@ import pdb
 logger = logging.getLogger('blog.views')
 #pdb.set_trace()
 # Create your views here.
+from django.views.decorators.cache import cache_page
+
+# @cache_page(60 * 15)导致报错'dict' object has no attribute 'streaming'
+
+
 def global_setting(request):
     # 站点基本信息
     SITE_URL = settings.SITE_URL
@@ -73,7 +78,6 @@ def index(request):
 def archive(request):
     try:
         # 先获取客户端提交的信息
-        print dd
         year = request.GET.get('year', None)
         month = request.GET.get('month', None)
         #date_publish__i（忽略大小写）contains（like模糊查询）=year+'-'+month
@@ -86,7 +90,6 @@ def archive(request):
 # 按标签查询对应的文章列表
 def tag(request):
     try:
-        # 同学们自己实现该功能
         pass
     except Exception as e:
         logger.error(e)

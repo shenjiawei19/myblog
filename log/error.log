@@ -1,0 +1,1 @@
+2016-06-24 16:38:34,144 [Thread-2:21460] [blog.views:70] [views:index] [ERROR]- type object 'Article' has no attribute 'distinct_date'
